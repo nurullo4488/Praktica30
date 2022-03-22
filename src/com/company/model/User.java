@@ -6,19 +6,22 @@ public class User {
     private  int id;
     private  String name;
     private  int age ;
-    private String gender;
+     private  Gender gender;
+
     private Userdao userdao;
 
-    public User(int id, String name, int age, String gender) {
+    public User(int id, String name, int age, Gender gender) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.gender = gender;
+        this.gender= gender;
     }
 
     public User() {
 
     }
+
+
 
     public int getId() {
         return id;
@@ -44,12 +47,12 @@ public class User {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
     }
 
     @Override

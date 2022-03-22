@@ -16,11 +16,10 @@ public class UserServiceImpl implements  Userservice  {
 
     }
 
-
-
     @Override
-    public void UserAdd(List<User> userList) {
-        userList.add((User) userList);
+    public void UserAdd(List<User> userList, User user) {
+        userList.add(user);
+
 
 
     }
@@ -88,8 +87,5 @@ public class UserServiceImpl implements  Userservice  {
     public  void  setUsers(Userdao users){
         this.users=users;
     }
-    public  void UserAdd(List<User>users,User user){
 
-
-    }
 }

@@ -12,6 +12,7 @@ package com.company;
 //        15) 2 деген id менен userди очурунуз.
 
 import com.company.dao.Userdao;
+import com.company.model.Gender;
 import com.company.model.User;
 import com.company.service.Impl.UserServiceImpl;
 
@@ -26,19 +27,56 @@ public class Main {
 
 
         List<User>userList=new ArrayList<>(Arrays.asList(
-                new User(1,"NURULLO",20,"ERKEK"),
-                new User(2,"LIONELMESSI",18,"KYZ"),
-                new User(3,"RONALDO",30,"ERKEK")));
-     //   userList.stream().forEach(n-> System.out.println(n));
+                new User(1,"NURULLO",20,Gender.MALE),
+                new User(2,"LIONELMESSI",18,Gender.FEMALE),
+                new User(3,"RONALDO",30,Gender.MALE)));
+
         Userdao userdao= new Userdao(userList);
         UserServiceImpl userServiceimpl=new UserServiceImpl(userdao);
-        userServiceimpl.UserFindWithid(userList,1);
-        System.out.println("=========");
-        userServiceimpl.GetAllUsers(userList);
-        System.out.println("=");
-        userServiceimpl.DeleteWithid(userList,2);
+        userServiceimpl.UserAdd(userList,new User(4,"SARYSHKA",20,Gender.FEMALE));
 
+        userServiceimpl.UserFindWithid(userList,1);
+        System.out.println("-----------");
         userServiceimpl.GetAllUsers(userList);
+        System.out.println("===========================  : ");
+        userServiceimpl.GetAllUsers(userList);
+        userServiceimpl.DeleteWithid(userList,2);
+        System.out.println("     2  ID DELETED  ");
+        userServiceimpl.GetAllUsers(userList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//        userServiceimpl.UserFindWithid(userList,1);
+//        System.out.println("1 degen id mn chakyryp aldyk");
+//        userServiceimpl.GetAllUsers(userList);
+//        System.out.println("user udalit boldu               : ");
+//
+//        userServiceimpl.DeleteWithid(userList,2);
+//        userServiceimpl.GetAllUsers(userList);
+//        System.out.println(" bir user koshuldu          :     ");
+//        userServiceimpl.UserAdd(userList,new User(4,"luis suarez",20,"sary"));
+//        userServiceimpl.GetAllUsers(userList);
+
+
 
 
 

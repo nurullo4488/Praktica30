@@ -12,11 +12,9 @@ public interface Userservice {
 
     void UserAdd(List<User> userList, User user);
 
-    void UserAdd(List<User> userList);
-
     void  UserFindWithid(List<User>userList, int id);
 
-    abstract boolean DeleteWithid(List<User> userList, int id);
+    boolean DeleteWithid(List<User> userList, int id);
 
     void  GetAllUsers(List<User>userList);
 
